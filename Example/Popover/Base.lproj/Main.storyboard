@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NSj-Tm-c7V">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NSj-Tm-c7V">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,7 +32,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzU-kr-bWJ">
-                                <rect key="frame" x="217" y="587" width="122" height="30"/>
+                                <rect key="frame" x="218" y="587" width="121" height="30"/>
                                 <state key="normal" title="Up Table Popover">
                                     <color key="titleColor" red="0.97647058819999999" green="0.29803921570000003" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -42,13 +41,25 @@
                                     <action selector="tappedRightButtomButton:" destination="KqD-tH-A54" eventType="touchUpInside" id="T2M-CW-Ps2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQv-8b-rR4">
+                                <rect key="frame" x="165.5" y="318.5" width="44" height="30"/>
+                                <state key="normal" title="Dialog">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.29803921570000003" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedCenterButton:" destination="KqD-tH-A54" eventType="touchUpInside" id="0WR-Ly-55n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="KQv-8b-rR4" firstAttribute="centerX" secondItem="T43-KC-HyU" secondAttribute="centerX" id="0IK-7g-Hlm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AzU-kr-bWJ" secondAttribute="trailing" constant="20" id="Cpd-ri-2iF"/>
                             <constraint firstItem="Coa-16-dTR" firstAttribute="top" secondItem="AzU-kr-bWJ" secondAttribute="bottom" constant="50" id="PPX-sG-ca1"/>
                             <constraint firstItem="mU4-u9-D2Y" firstAttribute="leading" secondItem="T43-KC-HyU" secondAttribute="leadingMargin" constant="6" id="fio-zq-5hu"/>
                             <constraint firstItem="Coa-16-dTR" firstAttribute="top" secondItem="mU4-u9-D2Y" secondAttribute="bottom" constant="150" id="iFN-w0-8JY"/>
+                            <constraint firstItem="KQv-8b-rR4" firstAttribute="centerY" secondItem="T43-KC-HyU" secondAttribute="centerY" id="vqg-mz-5EO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nzb-3q-qzp">
@@ -85,7 +96,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NSj-Tm-c7V" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7tY-02-qw4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

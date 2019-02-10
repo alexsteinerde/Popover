@@ -42,7 +42,15 @@ class ViewController: UIViewController {
     popover.show(aView, fromView: self.leftBottomButton)
   }
 
-  @IBAction func tappedRightButtomButton(_ sender: UIButton) {
+    @IBAction func tappedCenterButton(_ sender: UIButton) {
+        let width = self.view.frame.width / 4
+        let aView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: width))
+
+        let popover = Popover(options: [.blackOverlayColor(UIColor(white: 0.0, alpha: 0.6)), .dismissOnBlackOverlayTap(true)])
+        popover.showAsDialog(aView, inView: self.view)
+    }
+
+    @IBAction func tappedRightButtomButton(_ sender: UIButton) {
     let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 135))
     tableView.delegate = self
     tableView.dataSource = self
