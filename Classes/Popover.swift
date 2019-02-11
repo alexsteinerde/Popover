@@ -62,6 +62,7 @@ open class Popover: UIView {
   fileprivate var contentView: UIView!
   fileprivate var contentViewFrame: CGRect!
   fileprivate var arrowShowPoint: CGPoint!
+    private var centeredDialog = false
 
   public init() {
     super.init(frame: .zero)
@@ -104,6 +105,7 @@ open class Popover: UIView {
 
   open func showAsDialog(_ contentView: UIView, inView: UIView) {
     self.arrowSize = .zero
+    centeredDialog = true
     let point = CGPoint(x: inView.center.x,
                         y: inView.center.y - contentView.frame.height / 2)
     self.show(contentView, point: point, inView: inView)
@@ -448,6 +450,17 @@ private extension Popover {
     }
     self.addSubview(self.contentView)
     self.containerView.addSubview(self)
+    if centeredDialog {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: containerView, attribute: .centerX, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: containerView, attribute: .centerY, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: self, attribute: .height, relatedBy: .lessThanOrEqual, toItem: containerView, attribute: .height, multiplier: 0.8, constant: 0),
+            NSLayoutConstraint(item: self, attribute: .width, relatedBy: .lessThanOrEqual, toItem: containerView, attribute: .width, multiplier: 1, constant: -40),
+            NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: contentView.bounds.width),
+            NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: contentView.bounds.height),
+            ])
+    }
 
     self.create()
     self.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
